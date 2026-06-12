@@ -1,0 +1,9 @@
+from langchain_huggingface import HuggingFaceEmbeddings
+
+embedding = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L12-v2')
+
+text = "Delhi s the capital of the india"
+
+vector = embedding.aembed_query(text)
+
+print(str(vector))

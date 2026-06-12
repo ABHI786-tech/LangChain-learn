@@ -1,0 +1,16 @@
+langchain
+langgraph
+langchain-openai
+langchain-google-genai
+langchain-anthropic
+langchain-groq
+langchain-huggingface
+
+openai
+google-generativeai
+anthropic
+groq
+
+transformers
+torch
+huggingface_hub
