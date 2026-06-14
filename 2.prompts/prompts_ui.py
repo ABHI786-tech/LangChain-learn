@@ -1,4 +1,6 @@
 # from langchain_openai import ChatOpenAI
+import os
+from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import streamlit as st
@@ -6,7 +8,8 @@ from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 
-model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+# model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+model = ChatGroq(model="openai/gpt-oss-20b", groq_api_key=os.getenv("GROQ_API_KEY"))
 st.header('Reasearch Tool')
 # user_input = st.text_input("Enter your prompt")
 
