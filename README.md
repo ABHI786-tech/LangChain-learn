@@ -15,6 +15,9 @@ The project is organized into 5 main folders:
 ### 2. **2.prompts/** - How to create good prompts
 - `prompts_ui.py` - A Streamlit app that lets you summarize research papers with custom styles!
 - Other prompt template examples
+```
+streamlit run prompts_ui.py
+```
 
 ### 3. **3.structure_output/** - Get structured responses
 - Examples for getting JSON or Pydantic object outputs from models
