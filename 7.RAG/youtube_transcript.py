@@ -15,13 +15,16 @@ Dependencies:
     - langchain: For text splitting, embeddings, and RAG pipeline
     - HuggingFace: For embeddings and LLM models
 """
-
+import os
 from langchain_classic.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
 from langchain_huggingface import (ChatHuggingFace, HuggingFaceEmbeddings,
                                    HuggingFaceEndpoint)
 from youtube_transcript_api import TranscriptsDisabled, YouTubeTranscriptApi
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # N8N full course video by Nick saraev
 video_id = "2GZ2SNXWK-c"
@@ -63,7 +66,7 @@ retriever.invoke("what is N8N")
 llm = HuggingFaceEndpoint(
     repo_id= "deepseek-ai/DeepSeek-V4-Flash",
     task="text-generation",
-    huggingfacehub_api_token = "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"
+    huggingfacehub_api_token = os.getenv("HUGGINGFACEHUB_ACCESS_TOKEN")
 )
 
 # Wrap the LLM with ChatHuggingFace for chat-based interactions
